@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { Button, Input } from '@material-ui/core';
 import './App.css';
+import Card from './components/card/Card';
 
 function App() {
+
+  const state = [
+    {
+      id: 1,
+      title: 'test'
+    }
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container mt-5">
+      <h1 className="text-center heading">To do list</h1>
+      <Card>
+        <Input />
+        <Button>dasdasd</Button>
+      </Card>
     </div>
   );
 }
