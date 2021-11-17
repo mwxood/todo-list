@@ -1,23 +1,35 @@
-import { Button, Input } from '@material-ui/core';
+
 import './App.css';
-import Card from './components/card/Card';
+import Create from './components/create/Create';
+import Items from './components/items/Items';
 
 function App() {
 
   const state = [
     {
       id: 1,
-      title: 'test'
+      title: 'Create the perfect list for every need.'
+    }, 
+
+    {
+      id: 2,
+      title: 'Organize, discuss and get things done.'
+      
+    },
+
+    {
+      id: 3,
+      title: 'Organize everything into different spaces.'
     }
   ]
+
+  const newState = [...state]
 
   return (
     <div className="App container mt-5">
       <h1 className="text-center heading">To do list</h1>
-      <Card>
-        <Input />
-        <Button>dasdasd</Button>
-      </Card>
+        <Create />
+        <Items list={newState} />
     </div>
   );
 }

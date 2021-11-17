@@ -1,4 +1,9 @@
 .card {
     background: #fff;
     padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card:last-child {
+    margin-bottom: 0;
 }

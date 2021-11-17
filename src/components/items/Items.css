@@ -1,0 +1,25 @@
+.danger {
+    background-color: #e74c3c !important;
+    color: #fff !important;
+}
+
+.item-holder {
+    display: flex;
+    align-items: center;
+}
+
+.d-flex { display: flex; }
+.flex-wrap { flex-wrap: wrap; }
+
+.item { margin-right: 10px; }
+
+.card-wrap .card {
+    margin-right: 10px;
+    max-width: 320px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.card-wrap .card:nth-child(3n + 3) {
+    margin-right: 0;
+}
