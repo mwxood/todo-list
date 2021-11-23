@@ -1,9 +1,10 @@
 
+import React, { useState } from 'react';
 import './App.css';
 import Create from './components/create/Create';
 import Items from './components/items/Items';
 
-function App() {
+function App(props) {
 
   const state = [
     {
@@ -23,13 +24,31 @@ function App() {
     }
   ]
 
-  const newState = [...state]
+  const [items, setItems] = useState([...state])
+
+  const addListHandler = (id, title) => {
+    setItems((prev) => {
+      return [...prev, {id: id, title: title}]
+    })
+  } 
+
+  const getId = (id) => {
+    setItems((prev) => {
+      console.log(prev)
+    })
+  }
+
+  const onRemoveHandler = (event) => {
+    const id = event.target.getAttribute('id')
+    setItems(items.filter(item => item.id !== +id))
+
+  }
 
   return (
     <div className="App container mt-5">
       <h1 className="text-center heading">To do list</h1>
-        <Create />
-        <Items list={newState} />
+        <Create onAddList={addListHandler} createEl={items} />
+        <Items getId={getId} removeItem={onRemoveHandler} list={items} />
     </div>
   );
 }

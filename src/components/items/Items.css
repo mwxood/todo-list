@@ -23,3 +23,7 @@
 .card-wrap .card:nth-child(3n + 3) {
     margin-right: 0;
 }
+
+.item-holder button span {
+    pointer-events: none;
+} 

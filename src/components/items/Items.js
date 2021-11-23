@@ -16,7 +16,7 @@ const Read = (props) => {
                         {item.title}
                     </div>
 
-                    <Button variant="contained" className="danger">Delete</Button>
+                    <Button variant="contained" id={item.id} onClick={props.removeItem} className="danger">Delete</Button>
                </div>
             </Card>
         )

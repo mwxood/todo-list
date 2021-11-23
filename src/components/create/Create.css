@@ -1,3 +1,19 @@
 .full-width { width: 100%; }
 .d-flex { display: flex; }
 .mr-1 { margin-right: 10px; }
+
+.error-message {
+    display: block;
+    margin: 10px 0;
+    color: #e74c3c;
+}
+
+
+.list-input {
+    width: 100%;
+    margin-right: 30px;
+}
+
+.align-content-center {
+    align-items: center;
+}
