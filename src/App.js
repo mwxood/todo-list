@@ -42,7 +42,7 @@ function App(props) {
     <div className="App container mt-5">
       <h1 className="text-center heading">To do list</h1>
         <Create onAddList={addListHandler} createEl={items} />
-        <Items getId={getId} removeItem={onRemoveHandler} list={items} />
+        <Items removeItem={onRemoveHandler} list={items} />
     </div>
   );
 }
