@@ -32,12 +32,6 @@ function App(props) {
     })
   } 
 
-  const getId = (id) => {
-    setItems((prev) => {
-      console.log(prev)
-    })
-  }
-
   const onRemoveHandler = (event) => {
     const id = event.target.getAttribute('id')
     setItems(items.filter(item => item.id !== +id))
