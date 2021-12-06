@@ -1,32 +1,45 @@
-import Card from "../card/Card";
-import { Button } from '@material-ui/core';
+import { Button, Card, Grid, CardContent } from '@material-ui/core';
+
 import './Items.css'
 const Read = (props) => {
   
 
     const items = props.list.map((item) => {
         return(
-            <Card key={item.id} className="card-item">
-                <div className="item-holder">
-                    <div className="item">
-                        {`#${item.id}`}
-                    </div>
+            <Grid item xs={6} key={item.id}>
+             <Card variant="outlined">
+                <Grid container spacing={2}>
+                    <Grid item xs={1}>
+                        <CardContent>
+                            {`#${item.id}`}
+                        </CardContent>
+                        
+                    </Grid>
 
-                    <div className="item">
-                        {item.title}
-                    </div>
-
-                    <Button variant="contained" id={item.id} onClick={props.removeItem} className="danger">Delete</Button>
-               </div>
+                    <Grid item xs={8}>
+                        <CardContent>
+                            {item.title}
+                        </CardContent>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <CardContent>
+                            <Button variant="contained" id={item.id} onClick={props.removeItem} className="danger">Delete</Button>
+                         </CardContent>
+                    </Grid>
+                </Grid>
             </Card>
+            </Grid>
+            
         )
     })
 
 
     return(
-       <div className="card-wrap d-flex flex-wrap">
-           {items}
-        </div>
+        <Grid container spacing={2}>
+             {items}
+        </Grid>
+
+   
     )
 }
 

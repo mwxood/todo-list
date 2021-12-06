@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Input } from '@material-ui/core';
-import Card from '../card/Card';
+import { Button, Input, Card, CardContent, Grid } from '@material-ui/core';
 import './Create.css';
 
 const Create = (props) => {
@@ -16,7 +15,7 @@ const Create = (props) => {
             return
         }
 
-        props.onAddList(Math.floor(Math.random() * 1000), list)
+        props.onAddList(Math.floor(Math.random() * 100), list)
         setList('')
     }
 
@@ -26,14 +25,16 @@ const Create = (props) => {
     }
 
     return(
-        <Card>
-               <form className="list-form d-flex align-content-center" onSubmit={addListHandler}>
+        <Card variant="outlined">
+            <CardContent>
+                <form className="list-form d-flex align-content-center" onSubmit={addListHandler}>
                     <label className="list-input">
-                        <Input className="full-width mr-1" value={list} onChange={listChangeHandler} />
+                    <Input className="full-width mr-1" value={list} onChange={listChangeHandler} />
                         <span className="error-message">{errorMessage}</span>
                     </label>
                     <Button variant="outlined" onClick={addListHandler}>Create</Button>
-               </form>
+                </form>
+            </CardContent>
         </Card>
     )
 }

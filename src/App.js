@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import './App.css';
 import Create from './components/create/Create';
 import Items from './components/items/Items';
+import {CardContent, Grid } from '@material-ui/core';
 
-function App(props) {
+function App() {
 
   const state = [
     {
@@ -30,13 +31,14 @@ function App(props) {
     setItems((prev) => {
       return [...prev, {id: id, title: title}]
     })
+
+    console.log(id)
   } 
 
   const onRemoveHandler = (event) => {
     const id = event.target.getAttribute('id')
     setItems(items.filter(item => item.id !== +id))
-
-  }
+   }
 
   return (
     <div className="App container mt-5">

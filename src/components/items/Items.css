@@ -24,6 +24,6 @@
     margin-right: 0;
 }
 
-.item-holder button span {
+button span {
     pointer-events: none;
 } 
