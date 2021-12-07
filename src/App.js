@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import './App.css';
 import Create from './components/create/Create';
 import Items from './components/items/Items';
-import {CardContent, Grid } from '@material-ui/core';
 
 function App() {
 
@@ -25,14 +24,13 @@ function App() {
     }
   ]
 
-  const [items, setItems] = useState([...state])
+  const [items, setItems] = useState(state)
 
   const addListHandler = (id, title) => {
     setItems((prev) => {
       return [...prev, {id: id, title: title}]
     })
 
-    console.log(id)
   } 
 
   const onRemoveHandler = (event) => {
